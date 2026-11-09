@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise - Smart Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SpendWise</h1>
+        <p>Manage your money. Track your expenses. Save smarter.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="budget-section">
+            <h2>Set Your Monthly Budget</h2>
+
+            <div class="budget-form">
+                <input
+                    type="number"
+                    id="budgetInput"
+                    placeholder="Enter your budget (KSh)"
+                    min="0"
+                    step="0.01"
+                >
+                <button id="setBudgetBtn">Set Budget</button>
+            </div>
+
+            <p id="budgetMessage">Please set your monthly budget.</p>
+        </section>
+
+        <section class="dashboard">
+            <h2>Financial Dashboard</h2>
+
+            <div class="summary-cards">
+
+                <div class="card">
+                    <h3>Total Budget</h3>
+                    <p id="totalBudget">KSh 0.00</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p id="totalExpenses">KSh 0.00</p>
+                </div>
+
+                <div class="card">
+                    <h3>Remaining Balance</h3>
+                    <p id="remainingBalance">KSh 0.00</p>
+                </div>
+
+            </div>
+
+            <div class="progress-section">
+                <h3>Budget Usage</h3>
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+                <p id="budgetStatus">No budget information available.</p>
+            </div>
+        </section>
+
+        <section class="expense-section">
+            <h2>Add New Expense</h2>
+
+            <form id="expenseForm">
+
+                <input
+                    type="text"
+                    id="expenseName"
+                    placeholder="Expense name"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="expenseAmount"
+                    placeholder="Amount (KSh)"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+                <select id="expenseCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Education">Education</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit">Add Expense</button>
+
+            </form>
+
+            <p id="expenseMessage"></p>
+        </section>
+
+        <section class="expenses-list">
+            <h2>Expense Records</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="expenseTableBody">
+                        <tr>
+                            <td colspan="5">No expenses recorded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section class="feedback-section">
+            <h2>Budget Advice</h2>
+            <p id="adviceMessage">
+                Your financial advice will appear here.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SpendWise Budget Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
